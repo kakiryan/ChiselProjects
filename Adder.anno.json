@@ -1,0 +1,36 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~Adder|Adder>io_sum",
+    "sources":[
+      "~Adder|Adder>io_carryIn",
+      "~Adder|Adder>io_value1",
+      "~Adder|Adder>io_value2"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~Adder|Adder>io_carryOut",
+    "sources":[
+      "~Adder|Adder>io_value2",
+      "~Adder|Adder>io_carryIn",
+      "~Adder|Adder>io_value1"
+    ]
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"."
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"Adder"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  }
+]
