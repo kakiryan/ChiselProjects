@@ -15,7 +15,10 @@ class FunCircuit extends Module {
     }) 
 
     val register = RegInit(0.U)
+    // happen at same time
     register := Mux(io.select.asBool, io.input1, io.input2)
     io.sum := register + 1.U
+
+
     // val carryOut = register & 1.U
 }

@@ -10,22 +10,16 @@ class FunCircuitTests(funCircuit: FunCircuit) extends PeekPokeTester(funCircuit)
     val input1 = 0
     val input2   = 1
     for (t <- 0 until 4) {
-
         var select  = random.nextInt(2)
-        // have to give it an inital value?
-        var selected = 0 
-        if (select == 1) {
-            selected = input2
-        } else {
-            selected = input1
-        }
-        val sum  = (selected + 1) % 2
+
+        val sum  = (select + 1) % 2
 
         poke(funCircuit.io.input1, input1)
         poke(funCircuit.io.input2, input2)
+        step(1)
         poke(funCircuit.io.select, select)
         step(1)
-        expect(funCircuit.io.sum, selected)
+        expect(funCircuit.io.sum, sum)
     }
     }
 
