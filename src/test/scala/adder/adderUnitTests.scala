@@ -4,7 +4,7 @@ import chisel3.iotesters.{ChiselFlatSpec, Driver, PeekPokeTester}
 
 class AdderTests(adder: Adder) extends PeekPokeTester(adder) {
     val random = new scala.util.Random
-    for (t <- 0 until 1) {
+    for (t <- 0 until 2) {
         println("Clock cycle " + t)
         val value1 = random.nextInt(2)
         val value2    = random.nextInt(2)
