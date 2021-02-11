@@ -1,14 +1,17 @@
 package ex01
 
 import chisel3.iotesters.{ChiselFlatSpec, Driver, PeekPokeTester}
+import firrtl_interpreter.CircuitState
 
 class ex01UnitTests(ex01: Ex01) extends PeekPokeTester(ex01) {
   val random = new scala.util.Random
+  println("Done building -- starting execution")
   for (t <- 0 until 2) {
     println("Clock cycle " + t)
-    val value1 = random.nextInt(2)
+    //val value1 = random.nextInt(2)
+    val value1 = 1
     var result = 0
-    if (result == 1) {
+    if (value1 == 1) {
       result = 0
     } else {
       result = 1
