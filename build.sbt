@@ -44,7 +44,8 @@ addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.fu
 // Provide a managed dependency on X if -DXVersion="" is supplied on the command line.
 val defaultVersions = Seq(
   "chisel-iotesters" -> "1.4.1+",
-  "chiseltest"  -> "0.2.1+"
+  "chiseltest"  -> "0.2.1+",
+  "treadle" -> "1.3-SNAPSHOT"
   )
 
 libraryDependencies ++= defaultVersions.map { case (dep, ver) =>
@@ -53,3 +54,5 @@ libraryDependencies ++= defaultVersions.map { case (dep, ver) =>
 scalacOptions ++= scalacOptionsVersion(scalaVersion.value)
 
 javacOptions ++= javacOptionsVersion(scalaVersion.value)
+
+unmanagedJars in Compile += file("/home/kakiryan/ScalaZ3/target/scala-2.11/scalaz3_2.11-4.7.1.jar")
