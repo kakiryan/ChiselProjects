@@ -24,10 +24,16 @@ class upDownCounterUnitTests(counter: UpDownCounter) extends PeekPokeTester(coun
 //    }
 //  }
 
+//  for (t <- 0 until 1) {
+//    println("Testing ")
+//    reset(1)
+//    expect(counter.io.value, 0)
+//  }
+//
   for (t <- 0 until 1) {
-    println("Testing reset")
-    reset(1)
-    expect(counter.io.value, 0)
+    poke(counter.io.inst, 1)
+    step(1)
+    expect(counter.io.value, t + 1)
   }
 
 
