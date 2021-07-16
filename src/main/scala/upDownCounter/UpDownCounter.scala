@@ -11,9 +11,9 @@ class UpDownCounter extends Module {
   })
 
   var internalValue = RegInit(0.S(32.W))
-//  when ( Module.reset.asBool()) {
-//    internalValue := 0.S
-//  } otherwise  {
+  withReset ( reset.asBool()) {
+   internalValue := 0.S
+  }
     when (io.inst.asBool()) {
       internalValue := internalValue + 1.S
     } otherwise {
