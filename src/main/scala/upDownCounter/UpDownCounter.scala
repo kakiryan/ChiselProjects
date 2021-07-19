@@ -1,6 +1,7 @@
 package upDownCounter
 
 import chisel3._
+import chisel3.stage.ChiselStage
 
 class UpDownCounter extends Module {
   val io = IO(new Bundle {
@@ -19,7 +20,6 @@ class UpDownCounter extends Module {
     } otherwise {
       internalValue := internalValue - 1.S
     }
-  //}
   io.value := internalValue
 
 }
