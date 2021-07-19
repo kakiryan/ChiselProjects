@@ -22,4 +22,5 @@ class UpDownCounter extends Module {
     }
   io.value := internalValue
 
+
 }
