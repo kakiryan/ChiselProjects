@@ -33,7 +33,7 @@ class upDownCounterUnitTests(counter: UpDownCounter) extends PeekPokeTester(coun
 //
   for (t <- 0 until 1) {
    poke(counter.io.inst, 1)
-   step(1)
+   // step(1)
 
   }
 

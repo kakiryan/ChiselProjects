@@ -22,5 +22,7 @@ class UpDownCounter extends Module {
     }
   io.value := internalValue
 
+  // assert(internalValue < 2.S(32.W))
+
 
 }
